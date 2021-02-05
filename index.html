@@ -14,7 +14,7 @@
 
   <!-- ========= header -->
 
-  <header class="header container">
+  <header class="container header">
     <a class="header__logo" href="#"></a>
 
     <nav class="menu header__menu">
@@ -69,21 +69,27 @@
     </nav>
 
     <div class="header__handler"></div>
+
+    <button class="burger" type="button">
+      <span class="burger-item">Menu</span>
+    </button>
   </header>
 
   <main class="content"></main>
 
     <!-- ========= title -->
     <section class="title">
-      <div class="circle circle_position_left circle_rotate_45">
-        <div class="circle__inner circle__inner_color_green"></div>
-        <div class="circle__inner circle__inner_color_light-green"></div>
-      </div>
+      <div class="container title__background">
+        <div class="circle circle_position_left circle_rotate_45">
+          <div class="circle__inner circle__inner_color_green"></div>
+          <div class="circle__inner circle__inner_color_light-green"></div>
+        </div>
 
-      <div class="circle circle_position_right circle_rotate_180">
-        <div class="circle__inner circle__inner circle__inner_color_green"></div>
-        <div class="circle__inner circle__inner_color_light-green"></div>
-        <div class="circle__inner circle__inner_color_gray"></div>
+        <div class="circle circle_position_right circle_rotate_180">
+          <div class="circle__inner circle__inner circle__inner_color_green"></div>
+          <div class="circle__inner circle__inner_color_light-green"></div>
+          <div class="circle__inner circle__inner_color_gray"></div>
+        </div>
       </div>
 
       <h1 class="main-title">Spring makes Java</h1>
@@ -132,9 +138,7 @@
           <h3 class="card__title">Microservices</h3>
           <p class="card__subtitle">Quickly deliver production‑grade features with independently evolvable microservices.</p>
         </a>
-      </div>
 
-      <div class="cards">
         <a class="card">
           <img class="card__image" src="./images/features-1.PNG" alt=""></img>
           <h3 class="card__title">Microservices</h3>

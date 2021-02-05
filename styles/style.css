@@ -26,7 +26,7 @@ header */
   position: relative;
 
   height: 48px;
-  padding: 10px 0;
+  padding: 10px 20px;
 }
 
 .header__logo {
@@ -123,6 +123,50 @@ menu */
   color: #6db33f;
 }
 
+/* burger */
+.burger {
+  display: none;
+
+  padding: 9px 2px;
+
+  cursor: pointer;
+  background: none;
+  border: 0;
+}
+
+.burger-item {
+  display: block;
+  position: relative;
+
+  width: 20px;
+  height: 3px;
+
+  background-color: #000000;
+  font-size: 0;
+  color: transparent;
+}
+
+.burger-item:before,
+.burger-item:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  z-index: 1;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: #000000;
+}
+
+.burger-item:before {
+  top: -8px;
+}
+
+.burger-item:after {
+  bottom: -8px;
+}
+
 /* =========
 title */
 
@@ -138,13 +182,21 @@ title */
   background-color: #ebf2f2;
 }
 
+.title__background {
+  position: relative;
+}
+
 .main-title {
+  z-index: 99;
+
   margin: 0;
 
   font-size: 58px;
 }
 
 .js-title {
+  z-index: 9;
+
   margin: 0 0 20px 0;
   
   font-size: 58px;
@@ -166,14 +218,14 @@ title BACKGROUND */
 
 .circle_position_left {
   position: absolute;
-  top: -100px;
-  left: -200px;
+  top: -200px;
+  left: -350px;
 }
 
 .circle_position_right {
   position: absolute;
-  top: -100px;
-  right: -200px;
+  top: -200px;
+  right: -350px;
 }
 
 .circle__inner {
@@ -217,6 +269,8 @@ title BACKGROUND */
 button */
 
 .button {
+  z-index: 9;
+
   padding: 14px 30px;
   margin-right: 10px;
 
@@ -316,9 +370,9 @@ features */
 cards */
 
 .cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
 }
 
 .card {
@@ -327,10 +381,8 @@ cards */
   align-items: center;
 
   box-sizing: border-box;
-  width: 275px;
+  width: 100%;
   padding: 30px;
-  margin-right: 25px;
-  margin-bottom: 20px;
 
   cursor: pointer;
   border: solid 2px #ebf2f2;
@@ -341,10 +393,6 @@ cards */
 .card:hover {
   transform: scale(1.005);
   box-shadow: 0 0 50px #ebf2f2;
-}
-
-.card:last-of-type {
-  margin-right: 0;
 }
 
 .card__image {
@@ -417,4 +465,71 @@ code */
 .description__subtitle {
   font-size: 16px;
   line-height: 1.4;
+}
+
+@media (max-width: 991px) {
+  /* header */
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    box-sizing: border-box;
+    height: 48px;
+    width: 100%;
+    padding: 8px 20px;
+
+    background-color: #fff;
+    border-bottom: solid 1px #ebf2f2;
+  }
+
+  .header__logo {
+    height: 30px;
+    width: 116px;
+  }
+
+  /* menu */
+  .menu {
+    display: none;
+  }
+
+  .header__handler {
+    display: none;
+  }
+
+  /* burger */
+  .burger {
+    display: block;
+  }
+
+  /* title */
+  .title {
+    margin-top: 46px;
+  }
+
+  /* features */
+  .features {
+    padding-bottom: 0;
+  }
+
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* code */
+
+  .two-col {
+    flex-direction: column-reverse;
+
+    margin: 0;
+  }
+
+  .two-col__code {
+    width: 100%;
+  }
+
+  .two-col__description {
+    width: 100%;
+    margin-bottom: 20px;
+  }
 }
